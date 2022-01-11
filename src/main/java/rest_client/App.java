@@ -6,9 +6,8 @@ import rest_client.configuration.MyConfig;
 import rest_client.entity.Employee;
 import rest_client.entity.Gender;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
+
 
 public class App {
     public static void main(String[] args) {
@@ -16,16 +15,16 @@ public class App {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfig.class);
         Communication communication = applicationContext.getBean("communication", Communication.class);
 
-//        List<Employee> allEmployees = communication.getAllEmployee();
-//        System.out.println(allEmployees);
-//
-//        Employee empById = communication.getEmployee(1);
-//        System.out.println(empById);
+        List<Employee> allEmployees = communication.getAllEmployee();
+        System.out.println(allEmployees);
+
+        Employee empById = communication.getEmployee(1);
+        System.out.println(empById);
 
 
-        Employee employee = new Employee("Елена", "Малышева", 1, "Sales", Gender.FEMALE, new Date(1994-11-23));
+        Employee employee = new Employee("Доминик", "Торетто", 1, "Sales", Gender.FEMALE, "1955-10-11");
         communication.saveEmployee(employee);
 
-//        communication.deleteEmployee(10);
+        communication.deleteEmployee(10);
     }
 }

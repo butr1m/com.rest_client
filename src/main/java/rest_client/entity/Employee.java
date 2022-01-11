@@ -1,6 +1,5 @@
 package rest_client.entity;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Employee {
@@ -10,12 +9,12 @@ public class Employee {
     private int departmentId;
     private String jobTitle;
     private Gender gender;
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, int departmentId, String jobTitle, Gender gender, Date dateOfBirth) {
+    public Employee(String firstName, String lastName, int departmentId, String jobTitle, Gender gender, String dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.departmentId = departmentId;
@@ -90,11 +89,11 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }
